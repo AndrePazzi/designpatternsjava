@@ -1,0 +1,16 @@
+public class Main {
+    public static void main(String[] args) {
+        Camisa c1 = new Camisa(50);
+        Huevos h1 = new Huevos(40);
+        Verduras v1 = new Verduras(30);
+        Verduras v2 = new Verduras(35);
+        Camisa c2 = new Camisa(55);
+        Composito composito = new Composito();
+        composito.agregar(c1);
+        composito.agregar(h1);
+        composito.agregar(v1);
+        composito.agregar(v2);
+        composito.agregar(c2);
+        composito.comprar();
+    }
+}

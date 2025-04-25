@@ -1,0 +1,31 @@
+public class BuilderTostilocos {
+
+    private int cueritos;
+    private int pepino;
+    private int cacahuates;
+    private int jicama;
+
+    public BuilderTostilocos setCueritos(int cueritos){
+        this.cueritos = cueritos;
+        return this;
+    }
+
+    public BuilderTostilocos setPepino(int pepino){
+        this.pepino = pepino;
+        return this;
+    }
+
+    public BuilderTostilocos setCacahuates(int cacahuates){
+        this.cacahuates = cacahuates;
+        return this;
+    }
+
+    public BuilderTostilocos setJicama(int jicama){
+        this.jicama = jicama;
+        return this;
+    }
+
+    public Tostilocos getTostilocos(){
+        return new Tostilocos(cueritos, pepino, cacahuates, jicama);
+    }
+}

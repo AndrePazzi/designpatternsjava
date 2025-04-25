@@ -1,0 +1,7 @@
+public class TelevisionActual implements Television{
+
+    @Override
+    public void mostrarImagenes(){
+        System.out.println("Conectado a HDMI");
+    }
+}

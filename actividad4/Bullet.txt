@@ -1,0 +1,19 @@
+public class Bullet implements Prototype {
+    private String weapon;
+    private float speed;
+    private float trajectory;
+
+    public Bullet(String weapon, float speed, float trajectory){
+        this.weapon = weapon;
+        this.speed = speed;
+        this.trajectory = trajectory;
+    }
+    public Bullet clone(){
+        return new Bullet(weapon, speed, trajectory);
+    }
+
+    @Override
+    public String toString(){
+        return "Projectil (disparado de "+weapon+")";
+    }
+}

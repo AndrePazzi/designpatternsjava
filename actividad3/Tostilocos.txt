@@ -1,0 +1,23 @@
+public class Tostilocos {
+
+    private int cueritos;
+    private int pepino;
+    private int cacahuates;
+    private int jicama;
+
+    public Tostilocos(
+            int cueritos,
+            int pepino,
+            int cacahuates,
+            int jicama
+    ){
+        this.cueritos = cueritos;
+        this.pepino = pepino;
+        this.cacahuates = cacahuates;
+        this.jicama = jicama;
+    }
+    @Override
+    public String toString(){
+        return "Tostilocos(cueritos="+cueritos+",pepino="+pepino+",cacahuates="+cacahuates+",jicama="+jicama+")";
+    }
+}

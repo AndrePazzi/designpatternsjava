@@ -1,0 +1,10 @@
+public class MexicanaFactory implements AbstractFactory{
+    @Override
+    public Grande pizzaGrande(){
+        return new MexicanaGrande();
+    }
+    @Override
+    public Familiar pizzaFamiliar(){
+        return new MexicanaFamiliar();
+    }
+}

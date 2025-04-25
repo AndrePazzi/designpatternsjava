@@ -1,0 +1,10 @@
+public class Verduras implements Carrito{
+    private int precio;
+    public Verduras(int precio){
+        this.precio = precio;
+    }
+    @Override
+    public void comprar(){
+        System.out.printf("Comprando verduras que cuestan %s\n",precio);
+    }
+}

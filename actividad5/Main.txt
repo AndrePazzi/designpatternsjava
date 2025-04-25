@@ -1,0 +1,19 @@
+public class Main {
+
+    private Grande grande;
+    private Familiar familiar;
+
+    private Main(AbstractFactory factory){
+        familiar = factory.pizzaFamiliar();
+        grande = factory.pizzaGrande();
+    }
+    private void servir(){
+        familiar.preparar();
+        grande.preparar();
+    }
+    public static void main(String[] args) {
+        MexicanaFactory factory  = new MexicanaFactory();
+        Main pizza = new Main(factory);
+        pizza.servir();
+    }
+}

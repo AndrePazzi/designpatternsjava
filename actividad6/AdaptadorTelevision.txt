@@ -1,0 +1,11 @@
+public class AdaptadorTelevision implements Television{
+    private TelevisionAntigua tv;
+
+    public AdaptadorTelevision(TelevisionAntigua tv){
+        this.tv = tv;
+    }
+    @Override
+    public void mostrarImagenes(){
+        tv.mostrarImagenesAnt();
+    }
+}

@@ -1,0 +1,10 @@
+public class ItalianaFactory implements AbstractFactory{
+    @Override
+    public Grande pizzaGrande(){
+        return new ItalianaGrande();
+    }
+    @Override
+    public Familiar pizzaFamiliar(){
+        return new ItalianaFamiliar();
+    }
+}

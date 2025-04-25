@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Factory f =  new Factory();
+        Scanner s = new Scanner(System.in);
+        System.out.print("Ingrese una opcion ('a - Circulo','b - Cuadrado','c - Rectangulo','d - Triangulo','e - Ovalo'): ");
+        String valor = s.nextLine();
+        Figura figura = f.getInstance(valor);
+        figura.mostrar();
+    }
+}

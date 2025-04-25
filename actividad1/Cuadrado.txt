@@ -1,0 +1,8 @@
+public class Cuadrado implements Figura{
+
+    @Override
+    public void formar() {
+        System.out.println("Cuadrado formado");
+    }
+
+}

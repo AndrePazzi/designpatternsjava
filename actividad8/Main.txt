@@ -1,0 +1,10 @@
+public class Main {
+    public static void main(String[] args) {
+        Filtro filtro = new Filtro();
+        Destilador destilador = new Destilador();
+        Desinfectante desinfectante = new Desinfectante();
+        Purificador purificador = new Purificador(filtro,destilador,desinfectante);
+        purificador.introducirAguaSucia();
+        purificador.recibirAguaLimpia();
+    }
+}

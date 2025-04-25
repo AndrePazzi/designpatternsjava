@@ -1,0 +1,9 @@
+public class Rojo extends Color {
+    public Rojo(Figura figura){
+        super(figura);
+    }
+    public void colorFigura(){
+        System.out.print("Figura de color rojo con forma de ");
+        figura.mostrarFigura();
+    }
+}

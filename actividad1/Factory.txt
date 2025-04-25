@@ -1,0 +1,19 @@
+public class Factory {
+
+    public Figura getInstance(String select){
+        switch(select){
+            case "a":
+                return new Circulo();
+            case "b":
+                return new Cuadrado();
+            case "c":
+                return new Rectangulo();
+            case "d":
+                return new Triangulo();
+            case "e":
+                return new Ovalo();
+            default:
+                return null;
+        }
+    }
+}

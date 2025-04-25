@@ -1,0 +1,8 @@
+public class Destilador {
+    public void encender(){
+        System.out.println("Destilando agua");
+    }
+    public void apagar(){
+        System.out.println("Se ha destilado el agua");
+    }
+}

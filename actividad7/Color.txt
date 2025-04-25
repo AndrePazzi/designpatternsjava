@@ -1,0 +1,9 @@
+public abstract class Color {
+    protected Figura figura;
+
+    protected Color(Figura figura){
+        this.figura = figura;
+    }
+
+    public abstract void colorFigura();
+}

@@ -1,0 +1,7 @@
+public class Main {
+    public static void main(String[] args) {
+        Triangulo figura = new Triangulo();
+        Azul color = new Azul(figura);
+        color.colorFigura();
+    }
+}

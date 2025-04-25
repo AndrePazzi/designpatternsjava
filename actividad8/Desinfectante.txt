@@ -1,0 +1,8 @@
+public class Desinfectante {
+    public void encender(){
+        System.out.println("Desinfectando agua");
+    }
+    public void apagar(){
+        System.out.println("Se ha desinfectado el agua");
+    }
+}

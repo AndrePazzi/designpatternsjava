@@ -1,0 +1,8 @@
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Construccion de objetos");
+        BuilderTostilocos b = new BuilderTostilocos();
+        Tostilocos c = b.setCueritos(10).setPepino(25).setCacahuates(0).getTostilocos();
+        System.out.println(c.toString());
+    }
+}

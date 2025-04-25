@@ -1,0 +1,8 @@
+public class Main {
+    public static void main(String[] args) {
+        Bullet bullet = new Bullet("AK-47", 2580F, 45F);
+        System.out.printf("bullet = %s\n",bullet.toString());
+        Bullet bullet2 = bullet.clone();
+        System.out.printf("bullet2 = %s\n",bullet2.toString());
+    }
+}

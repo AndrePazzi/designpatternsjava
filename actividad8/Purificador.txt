@@ -1,0 +1,24 @@
+public class Purificador {
+    private Filtro filtro;
+    private Destilador destilador;
+    private Desinfectante desinfectante;
+
+    public Purificador(Filtro filtro, Destilador destilador, Desinfectante desinfectante){
+        this.filtro = filtro;
+        this.destilador = destilador;
+        this.desinfectante = desinfectante;
+    }
+
+    public void introducirAguaSucia(){
+        System.out.println("Introduciendo agua sucia");
+        filtro.encender();
+        destilador.encender();
+        desinfectante.encender();
+    }
+    public void recibirAguaLimpia(){
+        filtro.apagar();
+        destilador.apagar();
+        desinfectante.apagar();
+        System.out.println("Se ha purificado el agua");
+    }
+}

@@ -1,0 +1,8 @@
+public class Ovalo implements Figura{
+
+    @Override
+    public void formar() {
+        System.out.println("Ovalo formado");
+    }
+
+}

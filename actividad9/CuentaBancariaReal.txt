@@ -1,0 +1,6 @@
+public class CuentaBancariaReal implements CuentaBancaria{
+    @Override
+    public void introducirPIN(){
+        System.out.println("Se ha iniciado la sesion");
+    }
+}

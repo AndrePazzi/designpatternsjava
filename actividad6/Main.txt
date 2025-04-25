@@ -1,0 +1,9 @@
+public class Main {
+    public static void main(String[] args) {
+        TelevisionActual tvActual = new TelevisionActual();
+        tvActual.mostrarImagenes();
+        TelevisionAntigua tvAntigua = new TelevisionAntigua();
+        AdaptadorTelevision adaptador = new AdaptadorTelevision(tvAntigua);
+        adaptador.mostrarImagenes();
+    }
+}

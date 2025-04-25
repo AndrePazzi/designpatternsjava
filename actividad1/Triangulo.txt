@@ -1,0 +1,8 @@
+public class Triangulo implements Figura{
+
+    @Override
+    public void formar() {
+        System.out.println("Triangulo formado");
+    }
+
+}

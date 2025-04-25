@@ -1,0 +1,8 @@
+public class Rectangulo implements Figura{
+
+    @Override
+    public void formar() {
+        System.out.println("Rectangulo formado");
+    }
+
+}

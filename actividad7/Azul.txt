@@ -1,0 +1,9 @@
+public class Azul extends Color {
+    public Azul(Figura figura){
+        super(figura);
+    }
+    public void colorFigura(){
+        System.out.print("Figura de color azul con forma de ");
+        figura.mostrarFigura();
+    }
+}

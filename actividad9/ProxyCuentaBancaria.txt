@@ -1,0 +1,15 @@
+public class ProxyCuentaBancaria implements CuentaBancaria{
+
+    private CuentaBancariaReal cuenta;
+
+    @Override
+    public void introducirPIN(){
+
+        if(cuenta == null){
+          System.out.println("Iniciando sesion");
+          cuenta = new CuentaBancariaReal();
+        }
+        cuenta.introducirPIN();
+    }
+
+}

@@ -1,0 +1,7 @@
+public class Triangulo implements Figura {
+    @Override
+    public void mostrarFigura()
+    {
+        System.out.printf("Triangulo");
+    }
+}

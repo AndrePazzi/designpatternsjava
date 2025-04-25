@@ -1,0 +1,7 @@
+public class Cuadrado implements Figura {
+    @Override
+    public void mostrarFigura()
+    {
+        System.out.printf("Cuadrado");
+    }
+}

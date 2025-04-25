@@ -1,0 +1,6 @@
+public class MexicanaFamiliar implements Familiar {
+    @Override
+    public void preparar(){
+        System.out.println("Mexicana Familiar");
+    }
+}

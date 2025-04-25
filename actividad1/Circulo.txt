@@ -1,0 +1,8 @@
+public class Circulo implements Figura{
+
+    @Override
+    public void formar() {
+        System.out.println("Circulo formado");
+    }
+
+}

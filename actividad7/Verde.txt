@@ -1,0 +1,9 @@
+public class Verde extends Color {
+    public Verde(Figura figura){
+        super(figura);
+    }
+    public void colorFigura(){
+        System.out.print("Figura de color verde con forma de ");
+        figura.mostrarFigura();
+    }
+}

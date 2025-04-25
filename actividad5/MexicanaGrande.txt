@@ -1,0 +1,6 @@
+public class MexicanaGrande implements Grande {
+    @Override
+    public void preparar(){
+        System.out.println("Mexicana Grande");
+    }
+}

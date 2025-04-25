@@ -1,0 +1,20 @@
+import java.util.List;
+import java.util.ArrayList;
+
+public class Composito implements Carrito{
+
+    private List<Carrito> compras = new ArrayList<>();
+
+    public void agregar(Carrito c){
+        compras.add(c);
+    }
+    public void eliminar(Carrito c){
+        compras.remove(c);
+    }
+    @Override
+    public void comprar(){
+        for(Carrito c: compras){
+            c.comprar();
+        }
+    }
+}

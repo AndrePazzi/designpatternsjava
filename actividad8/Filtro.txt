@@ -1,0 +1,8 @@
+public class Filtro {
+    public void encender(){
+        System.out.println("Filtrando agua");
+    }
+    public void apagar(){
+        System.out.println("Se ha filtrado el agua");
+    }
+}

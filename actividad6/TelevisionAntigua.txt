@@ -1,0 +1,5 @@
+public class TelevisionAntigua {
+    public void mostrarImagenesAnt(){
+        System.out.println("Mostrando pelicula en DVI");
+    }
+}
