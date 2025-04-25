@@ -1,0 +1,38 @@
+patrones creacionales
+*factory method
+crea objetos en una superclase y le permite a las subclases modificar el tipo de objeto
+sirve para utilizar objetos de una clase con propiedades distintas
+
+*abstract factory
+crea objetos sin especificar sus clases
+sirve para cuando se tengan variantes de un mismo tipo de objeto
+
+*prototype
+copia un objeto ya existente
+sirve para cuando se necesita copiar un objeto sin tener que copiar manualmente o saber sus detalles como campos privados, clase, interfaz, etc
+
+patrones estructurales
+*adapter
+permite a objetos interactuar cuando no pueden hacerlo de manera directa
+sirve para convertir los detalles de un objeto emisor al formato esperado por un objeto receptor
+
+*bridge
+divide una clase en 2 jerarquías
+sirve para implementar 2 atributos sin necesitar una subclase individual para cada combinación
+
+*decorator
+agrega funcionalidad a objetos ya existentes con el uso de wrappers
+sirve para permitir a un objeto utilizar atributos de otros sin necesidad de herencia
+
+patrones de comportamiento
+*observer
+observa a un objeto determinado y notifica de cualquier cosa que pase con respecto a él
+sirve para revisar el estado de cualquier atributo de un objeto desde cualquier otro objeto suscrito
+
+*iterator
+recorre cada elemento de una colección
+sirve para poder obtener cualquier objeto en una colección sin importar el tipo de colección
+
+*template method
+define una plantilla de un método en una clase
+sirve para permitir a cualquier subclase modificar partes de la plantilla
