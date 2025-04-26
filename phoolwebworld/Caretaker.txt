@@ -1,0 +1,17 @@
+package mementoPack;
+import java.util.Stack;
+
+public class Caretaker {
+    public Stack<Memento> mementoStack = new Stack<>();
+
+    public void save(Memento memento){
+        mementoStack.push(memento);
+    }
+    public Memento restore(){
+        if(mementoStack.isEmpty())
+        {
+            throw new RuntimeException("But there was nowhere else to go.");
+        }
+        return mementoStack.pop();
+    }
+}

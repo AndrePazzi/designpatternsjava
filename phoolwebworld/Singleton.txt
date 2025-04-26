@@ -1,0 +1,34 @@
+package singletonPack;
+
+import java.util.List;
+
+public class Singleton {
+    private static Singleton instance;
+    private static int keywordCount = 0;
+    private static List<java.lang.Boolean> keywords;
+
+    private Singleton(){}
+
+    public static Singleton getInstance(){
+        if(instance == null){
+            return new Singleton();
+        }
+        return instance;
+    }
+    public int getCount(){
+        return keywordCount;
+    }
+    public void setCount(List<java.lang.Boolean> keywords){
+        this.keywords = keywords;
+    }
+    public void checkCount(){
+        keywordCount = 0;
+        for(int i = 0; i < keywords.size(); i++)
+        {
+            if(keywords.get(i))
+            {
+                keywordCount++;
+            }
+        }
+    }
+}

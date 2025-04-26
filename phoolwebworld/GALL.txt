@@ -1,0 +1,12 @@
+package compositePack;
+
+public class GALL implements Inventory{
+    private int gallNumber;
+    public GALL(int gallNumber){
+        this.gallNumber = gallNumber;
+    }
+    @Override
+    public void showInventory(){
+        System.out.println("> "+gallNumber+"GALL");
+    }
+}

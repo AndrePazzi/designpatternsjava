@@ -1,0 +1,14 @@
+import java.util.HashMap;
+
+public class FlyweightFactory {
+    private HashMap<String, LibroConcreto> libros = new HashMap<>();
+
+    public LibroConcreto getLibro(String titulo){
+        LibroConcreto libro = libros.get(titulo);
+        if(libro == null){
+            libro = new LibroConcreto(titulo);
+            libros.put(titulo, libro);
+        }
+        return libro;
+    }
+}

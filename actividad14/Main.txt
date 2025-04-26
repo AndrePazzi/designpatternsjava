@@ -1,0 +1,15 @@
+import java.util.Iterator;
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        String str = "caracteres en un string";
+        char[] caracteres = str.toCharArray
+        Iterator<String> it = caracteres.iterator();
+
+        while(it.hasNext())
+        {
+        System.out.println(it.next());
+        }
+    }
+}

@@ -1,0 +1,12 @@
+public abstract class Conductor {
+
+    protected MediadorPolicia policia;
+    protected String automobil;
+
+    public Conductor(MediadorPolicia policia, String automobil){
+        this.conductor = policia;
+        this.automobil = automobil;
+    }
+    public abstract void manejar(String estado);
+    public abstract void recibir(String seña);
+}

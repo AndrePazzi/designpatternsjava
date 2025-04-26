@@ -1,0 +1,4 @@
+public interface MediadorPolicia {
+    void agregarConductor(Conductor conductor);
+    void darSeña(String seña, Conductor Conductor);
+}

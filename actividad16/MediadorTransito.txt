@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+
+public class MediadorTransito implements MediadorPolicia{
+    private ArrayList<Conductor> conductores = new ArrayList<>();
+
+    @Override
+    public void agregarConductor(Conductor conductor){
+        conductores.add(conductor);
+    }
+    @Override
+    public void darSeña(String seña, Conductor maneja){
+        for(Conductor conductor: conductores){
+            if(conductor != maneja){
+                conductor.recibir(seña);
+            }
+        }
+    }
+}

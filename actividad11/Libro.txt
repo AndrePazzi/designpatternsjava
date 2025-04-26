@@ -1,0 +1,3 @@
+public interface Libro {
+    void mostrarPublicadora(String pub);
+}

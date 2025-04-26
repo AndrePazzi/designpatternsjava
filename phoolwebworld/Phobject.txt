@@ -1,0 +1,9 @@
+package compositePack;
+
+public class Phobject implements Inventory{
+    public Phobject(){}
+    @Override
+    public void showInventory(){
+        System.out.println("> Phobject");
+    }
+}

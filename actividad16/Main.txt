@@ -1,0 +1,16 @@
+public class Main {
+    public static void main(String[] args) {
+        MediadorPolicia policia = new MediadorTransito();
+        Conductor c1 = new ConductorTransito(policia, "Automobil Rojo");
+        Conductor c2 = new ConductorTransito(policia, "Automobil Azul");
+        Conductor c3 = new ConductorTransito(policia, "Automobil Verde");
+
+        policia.agregarConductor(c1);
+        policia.agregarConductor(c2);
+        policia.agregarConductor(c3);
+
+        c1.manejar("luz verde");
+        c2.manejar("luz verde");
+        c3.manejar("luz roja");
+    }
+}

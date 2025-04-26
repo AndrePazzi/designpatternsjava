@@ -1,0 +1,24 @@
+public class Editor {
+    private String dibujo;
+    private Caretaker caretaker = new Caretaker();
+
+    public void setDibujo(String dibujo){
+        this.dibujo = dibujo;
+    }
+    public String getDibujo(){
+        return dibujo;
+    }
+    public void guardar(){
+        MementoEditor memento = new MementoEditor(dibujo);
+        caretaker.save(memento);
+    }
+    public void deshacer(){
+        if(caretaker.mementoStack.isEmpty()){
+            System.out.println("No hay nada para deshacer");
+            return;
+        }
+        Memento memento = caretaker.restore();
+        this.setDibujo(memento.getDibujo());
+        System.out.println("Dibujo anterior restaurado");
+    }
+}

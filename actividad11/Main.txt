@@ -1,0 +1,14 @@
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+
+        FlyweightFactory f = new FlyweightFactory();
+        LibroConcreto l1 = f.getLibro("El Señor de los Anillos");
+        LibroConcreto l2 = f.getLibro("Viaje al Centro de la Tierra");
+        l1.mostrarPublicadora("George Allen & Unwin HarperCollins");
+        l2.mostrarPublicadora("Hetzel");
+        LibroConcreto l3 = f.getLibro("Twilight");
+        l3.mostrarPublicadora("Little, Brown and Company");
+    }
+}

@@ -1,0 +1,21 @@
+package mvcPack;
+
+public class Controller {
+    private Model model;
+    private View view;
+
+    public Controller(Model m, View v){
+        this.model = m;
+        this.view = v;
+    }
+
+    public String getControllerRoom(){
+        return model.getRoom();
+    }
+    public void setControllerRoom(String room){
+        model.setRoom(room);
+    }
+    public void updateView(){
+        view.showModel(model.getRoom());
+    }
+}

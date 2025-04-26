@@ -1,0 +1,7 @@
+package mvcPack;
+
+public class View {
+    public void showModel(String room){
+        System.out.println(room);
+    }
+}

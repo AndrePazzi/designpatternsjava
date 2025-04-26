@@ -1,0 +1,22 @@
+package compositePack;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Composite implements Inventory{
+
+    private List<Inventory> items = new ArrayList<>();
+
+    public void obtain(Inventory i){
+        items.add(i);
+    }
+    public void drop(Inventory i){
+        items.remove(i);
+    }
+    @Override
+    public void showInventory(){
+        for(Inventory i: items){
+            i.showInventory();
+        }
+    }
+}

@@ -1,0 +1,5 @@
+package mementoPack;
+
+public interface Memento {
+    String getContent();
+}

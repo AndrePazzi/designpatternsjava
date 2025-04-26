@@ -1,0 +1,11 @@
+public class LibroConcreto implements Libro{
+
+    private String titulo;//
+    public LibroConcreto(String titulo){
+        this.titulo = titulo;
+    }
+    @Override
+    public void mostrarPublicadora(String pub){
+        System.out.println("Libro "+titulo+" publicado por "+pub+);
+    }
+}

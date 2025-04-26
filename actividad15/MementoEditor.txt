@@ -1,0 +1,9 @@
+public class MementoEditor implements Memento{
+    private final String dibujo;
+    public MementoEditor(String dibujo){
+        this.dibujo = dibujo;
+    }
+    public String getDibujo(){
+        return dibujo;
+    }
+}

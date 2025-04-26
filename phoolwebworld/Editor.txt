@@ -1,0 +1,24 @@
+package mementoPack;
+
+public class Editor {
+    private String content;
+    private Caretaker caretaker = new Caretaker();
+
+    public void setContent(String content){
+        this.content = content;
+    }
+    public String getContent(){
+        return content;
+    }
+    public void save(){
+        MementoEditor memento = new MementoEditor(content);
+        caretaker.save(memento);
+    }
+    public void undo(){
+        if(caretaker.mementoStack.isEmpty()){
+            return;
+        }
+        Memento memento = caretaker.restore();
+        this.setContent(memento.getContent());
+    }
+}

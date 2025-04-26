@@ -1,0 +1,17 @@
+public class Main {
+    public static void main(String[] args) {
+        Editor editor = new Editor();
+        editor.setDibujo("Circulo");
+        editor.guardar();
+        editor.setDibujo("Estrella");
+        editor.guardar();
+        editor.setDibujo("Corazon");
+        editor.guardar();
+        System.out.println(editor.getDibujo());
+        editor.deshacer();
+        System.out.println(editor.getDibujo());
+        editor.deshacer();
+        System.out.println(editor.getDibujo());
+
+    }
+}

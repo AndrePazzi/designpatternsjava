@@ -1,0 +1,14 @@
+public class ConductorTransito extends Conductor {
+    public ConductorTransito(MediadorPolicia policia, String automobil){
+        super(policia, automobil);
+    }
+    @Override
+    public void manejar(String estado){
+        System.out.printf("%s> %s\n", this.automobil, estado);
+        policia.darSeña(seña, this);
+    }
+    @Override
+    public void recibir(String seña){
+        System.out.printf("%s recibiendo %s\n", this.automobil, seña);
+    }
+}

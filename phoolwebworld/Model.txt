@@ -1,0 +1,13 @@
+package mvcPack;
+
+public class Model {
+    private String room;
+
+    public String getRoom(){
+        return room;
+    }
+
+    public void setRoom(String room){
+        this.room = room;
+    }
+}

@@ -1,0 +1,359 @@
+import java.util.List;
+import java.util.Arrays;
+import java.util.Scanner;
+
+import compositePack.Composite;
+import compositePack.GALL;
+import compositePack.Phobject;
+import mementoPack.Editor;
+import singletonPack.Singleton;
+import mvcPack.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<java.lang.Boolean> keywords = Arrays.asList(
+                false, // START [0]
+                false, // STAND [1]
+                false, // SIGN [2]
+                false, // BUSH [3]
+                false, // 8GALL [4]
+                false, // 8GALL:WHAT [5]
+                false, // 8GALL:WHERE [6]
+                false, // 8GALL:WHEN [7]
+                false, // 8GALL:WHO [8]
+                false, // 8GALL:WHY [9]
+                false, // STONE PATH [10]
+                false, // FLOWERS [11]
+                false, // LOG [12]
+                false, // END OF THE PATH [13]
+                false, // POSTERS [14]
+                false, // MAP [15]
+                false, // OPEN AREA [16]
+                false, // OLD MATTRESS [17]
+                false, // EMPLOYEE ROOM [18]
+                false, // 154832 [19]
+                false, // DOOR [20]
+                false, // INSTRUCTIONS [21]
+                false, // HIDDEN PHOBJECT [22]
+                false, // FLOWERS:RING [23]
+                false, // POSTERS:RING [24]
+                false, // MAP:RING [25]
+                false, // TROPICAL BREAKROOM [26]
+                false, // SHEEP [27]
+                false, // 11GALL [28]
+                false, // OLD MATTRESS:RING [29]
+                false // GREENHOUSE EXIT [30]
+
+        );
+        Scanner sc = new Scanner(System.in);
+        Editor editor = new Editor();
+
+        boolean ch1 = true;
+        String keyword = "POOL";
+
+        Singleton discoveredKeywords = Singleton.getInstance();
+        Composite heldItems = new Composite();
+
+        Model m = roomCall();
+        View v = new View();
+        Controller c = new Controller(m,v);
+        c.updateView();
+
+        while(ch1)
+        {
+            System.out.print("> ");
+            keyword = sc.nextLine();
+
+            System.out.println("------------------------------");
+
+            if(keyword.equalsIgnoreCase("BACK"))
+            {
+                editor.undo();
+                keyword = editor.getContent();
+            }
+            else
+            {
+                editor.setContent(keyword);
+                editor.save();
+            }
+
+            switch(keyword.toUpperCase())
+            {
+                case "POOL":
+                    c.setControllerRoom("play pool web world");
+                    break;
+                case "SCAN":
+                    if(keywords.get(21) && keywords.get(22))
+                    {
+                        if(keywords.get(11))
+                        {
+                            c.setControllerRoom("VIBRANT COLORS.\n");
+                        }
+                        else
+                        {
+                            c.setControllerRoom("???\n");
+                        }
+                        if(keywords.get(14))
+                        {
+                            c.setControllerRoom("COMPANY VISUALS.\n");
+                        }
+                        else
+                        {
+                            c.setControllerRoom("???\n");
+                        }
+                        if(keywords.get(15))
+                        {
+                            c.setControllerRoom("LOCATION GUIDE.\n");
+                        }
+                        else
+                        {
+                            c.setControllerRoom("???\n");
+                        }
+                        if(keywords.get(17))
+                        {
+                            c.setControllerRoom("RESTING POINT.\n");
+                        }
+                        else
+                        {
+                            c.setControllerRoom("???\n");
+                        }
+                    }
+                    break;
+                case "START":
+                    keywords.set(0, true);
+                    c.setControllerRoom("I open my eyes.\nThe sky is a strange gray-ish color.\nYet... it feels sunny.\nI STAND up.");
+                    break;
+                case "STAND":
+                    if(keywords.get(0))
+                    {
+                        keywords.set(1, true);
+                        c.setControllerRoom("I look around.\nI appear to be in some sort of greenhouse.\nIn front of me there is a SIGN.\nOn the ground, near it, a strange sphere is poking out of a BUSH.");
+                    }
+                    break;
+                case "SIGN":
+                    if(keywords.get(1))
+                    {
+                        keywords.set(2, true);
+                        c.setControllerRoom("I get closer to the sign.\n'Blue, Red, Green, Yellow, Purple, Orange'\n'Our colored flowers are the main attraction around here!'\nI look around trying to spot any colored flowers.\n...Nothing.");
+                    }
+                    break;
+                case "BUSH":
+                    if(keywords.get(1))
+                    {
+                        keywords.set(3, true);
+                        c.setControllerRoom("I look inside the bush and find a strange 8GALL.\nThere are many thorns in this bush so whoever left this here probably never found it.");
+                    }
+                    break;
+                case "8GALL":
+                    if(keywords.get(3))
+                    {
+                        keywords.set(4, true);
+                        c.setControllerRoom("I reach out for the 8GALL while being extra careful to not poke myself.\nAs soon as I tap it, it flies into the air. I recoil back in shock.\nThe 8GALL hovers in front of me and suddenly petals rain from the sky.\nThey seem to spell out some words...\n':WHAT' ':WHERE:' ':WHEN' ':WHO' ':WHY'\nI'm not quite sure what this means.\nWhile trying to be avoidant of the situation, I see a STONE PATH behind the bush and consider following it.");
+                    }
+                    break;
+                case "8GALL:WHAT":
+                    if(keywords.get(4))
+                    {
+                        keywords.set(5, true);
+                        c.setControllerRoom("I ask the 8GALL what its doing here.\nMore petals rain from the sky, spelling out 'HELP'.\nNot being very helpful right now.");
+                    }
+                    break;
+                case "8GALL:WHERE":
+                    if(keywords.get(4))
+                    {
+                        keywords.set(6, true);
+                        c.setControllerRoom("I ask the 8GALL where I am.\nMore petals rain from the sky, spelling out 'PHOOL'.");
+                    }
+                    break;
+                case "8GALL:WHEN":
+                    if(keywords.get(4))
+                    {
+                        keywords.set(7, true);
+                        c.setControllerRoom("I ask the 8GALL when I am.\nMore petals rain from the sky, spelling out '07/31/2004'.");
+                    }
+                    break;
+                case "8GALL:WHO":
+                    if(keywords.get(4))
+                    {
+                        keywords.set(8, true);
+                        c.setControllerRoom("I ask the 8GALL who I am.\nMore petals rain from the sky, spelling out 'AWN'.\nThat better not be my name, it's not a very nice one.");
+                    }
+                    break;
+                case "8GALL:WHY":
+                    if(keywords.get(4))
+                    {
+                        keywords.set(9, true);
+                        c.setControllerRoom("I ask the 8GALL why I'm here.\nMore petals rain from the sky, spelling out 'HELP'.\nI'm not sure if this thing understand what help means.");
+                    }
+                    break;
+                case "STONE PATH":
+                    if(keywords.get(4))
+                    {
+                        keywords.set(10, true);
+                        c.setControllerRoom("I jump past the bush and follow the stone path.\nThe 8GALL follows along.\nI stare at it for a second before deciding I could use the company.\nWhile following the path, I look around and see lots of different FLOWERS.\nI take in the view before continuing.");
+                    }
+                    break;
+                case "FLOWERS":
+                    if(keywords.get(10))
+                    {
+                        keywords.set(11, true);
+                        c.setControllerRoom("I look at all the flowers adorning the sides of the path.\nI can count 3 purple ones, 2 orange ones, 5 red ones and 8 yellow ones.\nThe rest of the path is surrounded by vines and tall grass.\nA LOG blocks the way forward.");
+                    }
+                    break;
+                case "LOG":
+                    if(keywords.get(11))
+                    {
+                        keywords.set(12, true);
+                        c.setControllerRoom("I jump over the log.\nA blue flower is poking out from it.\nThe END OF THE PATH is right ahead.");
+                    }
+                    break;
+                case "END OF THE PATH":
+                    if(keywords.get(12))
+                    {
+                        keywords.set(13, true);
+                        c.setControllerRoom("At the end, there is nothing but a wall.\nThere are some POSTERS on it as well as a MAP of the place.\nI look behind me to make sure the 8GALL is still following.\nWe both stare at the contents of the wall some more.");
+                    }
+                    break;
+                case "POSTERS":
+                    if(keywords.get(13))
+                    {
+                        keywords.set(14, true);
+                        c.setControllerRoom("There is a poster depicting a bunny wearing a flower crown.\nIt seems to be some kind of ad.\nI spot a wanted poster for some 'CartobaI inc. CEO'.\nI'd rather not get involved.");
+                    }
+                    break;
+                case "MAP":
+                    if(keywords.get(13))
+                    {
+                        keywords.set(15, true);
+                        c.setControllerRoom("The map includes a very convenient 'You Are Here' marker.\nLooking at it, I can see an OPEN AREA to the left, an EMPLOYEE ROOM to the right and the GREENHOUSE EXIT right back where we came from.");
+                    }
+                    break;
+                case "OPEN AREA":
+                    if(keywords.get(15))
+                    {
+                        keywords.set(16, true);
+                        c.setControllerRoom("I head to the open area.\nNot many things to see here other than an OLD MATTRESS on the ground.");
+                    }
+                    break;
+                case "OLD MATTRESS":
+                    if(keywords.get(16))
+                    {
+                        keywords.set(17, true);
+                        c.setControllerRoom("I lay down on the mattress.\nLooking up, I notice the open ceiling on this part of the greenhouse.\nThe sky is lit up despite there being no visible sun, so I can stare at it as much as I want.\nThere are 4 green flowers resting on each corner of the skylight.\n\n\n...\n\n\n...Whoops!\nI dozed off for a minute.");
+                    }
+                    break;
+                case "EMPLOYEE ROOM":
+                    if(keywords.get(15))
+                    {
+                        keywords.set(18, true);
+                        c.setControllerRoom("I arrive at the employee room.\nThe door is locked.\nNext to it there is a codepad with numbers 0-9\nI consider typing random numbers until it opens but I wouldn't want to trigger any alarms.");
+                    }
+                    break;
+                case "154832":
+                    if(keywords.get(18) && keywords.get(17))
+                    {
+                        keywords.set(19, true);
+                        c.setControllerRoom("I input the code '154832'.\nThe codepad flashes for a second and the DOOR opens.");
+                    }
+                    break;
+                case "DOOR":
+                    if(keywords.get(19))
+                    {
+                        keywords.set(20, true);
+                        c.setControllerRoom("I step inside the employee room.\nI see some old shelves and an INSTRUCTIONS poster on the wall.\nLooking closer at the shelves, I spot a HIDDEN PHOBJECT on top of the highest one.");
+                    }
+                    break;
+                case "INSTRUCTIONS":
+                    if(keywords.get(20))
+                    {
+                        keywords.set(21, true);
+                        c.setControllerRoom("I read the instructions.\n'Got a problem? Ring an Object!'\n'Our staff has carefully designed some interactive attractions around the greenhouse!'\n'If you've purchased a complementary Phobject souvenir, you can :RING around the various locations for an unforgettable experience!'\n'Unsure of where to ring? SCAN your surroundings!'\n'We hope you enjoy your stay!'\nI didn't catch a word of that.");
+                    }
+                    break;
+                case "HIDDEN PHOBJECT":
+                    if(keywords.get(20))
+                    {
+                        keywords.set(22, true);
+                        c.setControllerRoom("I stretch as far as I can to try and reach the Phobject.\nAfter an embarrassing amount of tapping and fiddling, I manage to make it roll towards me.\nI put the Phobject in my pocket and look around to make sure there are no cameras around. This is the employee room after all.");
+                        heldItems.obtain(new Phobject());
+                    }
+                    break;
+                case "FLOWERS:RING":
+                    if(keywords.get(21) && keywords.get(22))
+                    {
+                        keywords.set(23, true);
+                        c.setControllerRoom("I hold out the Phobject and it starts making a loud beeping noise.\nI try to cover my ears but don't in fear of dropping it and making the beeping worse.\nThe beeping stops.\nSuddenly, the colored flowers respond in all sort of noises, all much nicer than my Phobject's.");
+                    }
+                    break;
+                case "POSTERS:RING":
+                    if(keywords.get(21) && keywords.get(22) && keywords.get(14))
+                    {
+                        keywords.set(24, true);
+                        c.setControllerRoom("The Phobject starts beeping loudly.\nThe posters shift and change in front of my very eyes.\nThere is a poster depicting a masked entity holding a flower pot.\nThe wanted poster now shows some 'P.E.K.o ENGINEERING CEO'.\nWhatever marketing stunt this is supposed to be, it's not working.");
+                    }
+                    break;
+                case "MAP:RING":
+                    if(keywords.get(21) && keywords.get(22))
+                    {
+                        keywords.set(25, true);
+                        c.setControllerRoom("The Phobject beeps and shakes in my hands.\nA spot in the map that was previously empty now displays a new location.\nIt appears as if walking through the wall will lead me to the TROPICAL BREAKROOM, but that can't be right...");
+                    }
+                    break;
+                case "TROPICAL BREAKROOM":
+                    if(keywords.get(25))
+                    {
+                        keywords.set(26, true);
+                        c.setControllerRoom("I close my eyes and hope for the best as I walk towards the wall.\nAfter a few seconds of not bumping into it, I open my eyes.\nSuddenly, I find myself in a completely new area, with a visible sun and flowing rivers of clear water.\nAt the center of it all, a SHEEP is standing.");
+                    }
+                    break;
+                case "SHEEP":
+                    if(keywords.get(26))
+                    {
+                        keywords.set(27, true);
+                        c.setControllerRoom("As I get closer, I notice the 8GALL wait by the entrance.\nI approach the sheep. Before I even have the chance to talk, it starts speaking in a weird buffered voice.\n'I am Watson'.\n'Watson The Sheep'.\n'You have found My \"Tropical\" breakroom'.\n'Have this for your Troubles'.\nThe sheep proceeded to make a horrifying noise before spitting out a spherical item.\nIt's an 11GALLL.");
+                    }
+                    break;
+                case "11GALL":
+                    if(keywords.get(27))
+                    {
+                        keywords.set(28, true);
+                        c.setControllerRoom("I grab the 11GALL and try my hardest to clean it up before stuffing it in my pocket.\nI didn't think it could fit in there but it was worth a try.\nI look back to see Watson already asleep. I decide it's better to leave.\n\n\nThe 8GALL reunites with me after I'm out.\nIt seems to stare at the uncomfortable blob in my pocket, then, petals rain from the sky.\nThey spell out '11GALL'\n'1/16'\nI am once again confused by this. I cannot understand a single thing this 8GALL says to me.");
+                        heldItems.obtain(new GALL(11));
+                    }
+                    break;
+                case "OLD MATTRESS:RING":
+                    if(keywords.get(21) && keywords.get(22))
+                    {
+                        keywords.set(29, true);
+                        c.setControllerRoom("The Phobject's ringing takes me out of the moment.\nThankfully, it only lasted a couple seconds.\nThe flowers above seem to bloom bigger than before, and a rainbow can be seen in the sky.\nI may not know anything about this place, but I'd consider coming here on my own sometime soon.");
+                    }
+                    break;
+                case "GREENHOUSE EXIT":
+                    if(keywords.get(15))
+                    {
+                        keywords.set(30, true);
+                        c.setControllerRoom("After several minutes of retracing my steps, I reach the greenhouse exit.\nI can see a strong glow coming from the outside.\nWith the 8GALL still following me, I step into the glow.\nI wonder what awaits me on on the other side...\n\n");
+                        ch1 = false;
+                    }
+                    break;
+                default:
+                    editor.undo();
+                    c.setControllerRoom("I get lost in the flowers.\nIt'd be better to get BACK on track.");
+                    break;
+            }
+            c.updateView();
+            discoveredKeywords.setCount(keywords);
+        }
+        System.out.println("END OF CHAPTER 1");
+        discoveredKeywords.checkCount();
+        System.out.println("KEYWORDS: " + discoveredKeywords.getCount() + "/" + keywords.size());
+        System.out.println("OBTAINED ITEMS:");
+        heldItems.showInventory();
+    }
+    public static Model roomCall(){
+        Model m = new Model();
+        m.setRoom("PHOOL WEB WORLD\n\nThe wind is blowing.\nI feel myself surrounded by flowers.\nI am ready to START.");
+        return m;
+    }
+}
